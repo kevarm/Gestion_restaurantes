@@ -15,7 +15,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form>
+    <form action="/projects/2-DAW/proyecto_restaurantes/src/login.php" method="post">
         <label for="user">Usuario: </label>
         <input type="text" id="user" name="user">
         <label for="password">Contraseña: </label>
