@@ -32,7 +32,7 @@ if (isset($_POST['codigo'], $_POST['cantidad'])) {
         echo "Fallo en la conexión";
         exit();
     }
-
+    
     // Consulta para obtener el stock del producto
     $query = $conn->prepare("SELECT cantidad_stock FROM producto WHERE codigo = :codigo");
     $query->bindParam(':codigo', $codigo, PDO::PARAM_INT);

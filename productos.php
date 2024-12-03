@@ -36,12 +36,15 @@ if(isset($_GET["codigo"])){
     </header>
     
     <?php
+    
         try {
             $conn = conexion();
             if ($conn === null) {
                 echo "Error en la conexion";
                 exit();
             }
+              // Verificar los valores antes de que se muestren en el formulario
+            
             $query = $conn->prepare("SELECT * from productos where categoria_id=:categoria;");
             $query->bindParam(":categoria",$categoria);
             $query->execute();
@@ -77,6 +80,6 @@ if(isset($_GET["codigo"])){
             echo "Error: " . $e->getMessage();
             exit();
         }
-        ?>
+    ?>
 </body>
 </html>
