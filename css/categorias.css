@@ -1,0 +1,6 @@
+*{
+    display:flex;
+    margin:auto;
+    flex-direction: column;
+    padding:5px;
+}
