@@ -55,12 +55,20 @@ if(isset($_GET["codigo"])){
                     $cantidad=htmlspecialchars($producto["cantidad_stock"]);
                     $categoria_id=htmlspecialchars($producto["categoria_id"]);
 
-                    echo "<div> 
-                        <h3>$nombre</h3>
-                        <p>$descripcion</p>
-                        <p>$cantidad</p>
-                        <p>$peso</p>
-                    </div>";
+                    echo "
+                        <div>
+                            <h3>$nombre</h3>
+                            <p><strong>Descripción:</strong> $descripcion</p>
+                            <p><strong>Stock disponible:</strong> $cantidad</p>
+                            <p><strong>Peso:</strong> $peso kg</p>
+                            <form action='/proyectos/Gestion_restaurantes/src/agregarCarrito.php' method='POST'>
+                                <input type='hidden' name='codigoProducto' value='{$codigo}'>
+                                <input type='hidden' name='codigoCategoria' value='{$categoria_id}'>
+                                <label for='cantidad{$codigo}'>Cantidad:</label>
+                                <input type='number' id='cantidad{$codigo}' name='cantidad' value='1' min='1' max='{$cantidad}' required>
+                                <button type='submit'>Añadir al carrito</button>
+                            </form>
+                        </div>";          
                 }
             } else {
                 echo "<h3>No existen productos para esta categoría</h3>";
