@@ -5,10 +5,10 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/proyectos/Gestion_restaurantes/db/functions.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/projects/2-DAW/proyecto_restaurantes/db/functions.php";
 
 if (!isset($_SESSION["user"])) {
-    header("Location: /proyectos/Gestion_restaurantes/index.php");
+    header("Location: /projects/2-DAW/proyecto_restaurantes/index.php");
     exit();
 }
 
@@ -30,9 +30,9 @@ if(isset($_GET["codigo"])){
 </head>
 <body>
     <header>
-        <a href="/proyectos/Gestion_restaurantes/src/logout.php">Cerrar sesión</a>
-        <a href="/proyectos/Gestion_restaurantes/categorias.php">Volver a categorías</a>
-        <a href="/proyectos/Gestion_restaurantes/carrito.php">Ir al carrito</a>
+        <a href="/projects/2-DAW/proyecto_restaurantes/src/logout.php">Cerrar sesión</a>
+        <a href="/projects/2-DAW/proyecto_restaurantes/categorias.php">Volver a categorías</a>
+        <a href="/projects/2-DAW/proyecto_restaurantes/carrito.php">Ir al carrito</a>
     </header>
     
     <?php
@@ -64,7 +64,7 @@ if(isset($_GET["codigo"])){
                             <p><strong>Descripción:</strong> $descripcion</p>
                             <p><strong>Stock disponible:</strong> $cantidad</p>
                             <p><strong>Peso:</strong> $peso kg</p>
-                            <form action='/proyectos/Gestion_restaurantes/src/agregarCarrito.php' method='POST'>
+                            <form action='/projects/2-DAW/proyecto_restaurantes/src/agregarCarrito.php' method='POST'>
                                 <input type='hidden' name='codigoProducto' value='{$codigo}'>
                                 <input type='hidden' name='codigoCategoria' value='{$categoria_id}'>
                                 <label for='cantidad{$codigo}'>Cantidad:</label>

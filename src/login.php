@@ -5,13 +5,13 @@
 
     session_start();
 
-    require_once $_SERVER["DOCUMENT_ROOT"]."/proyectos/Gestion_restaurantes/db/functions.php";
+    require_once $_SERVER["DOCUMENT_ROOT"]."/projects/2-DAW/proyecto_restaurantes/db/functions.php";
 
     $user=$_POST["user"]??"";
     $pass=$_POST["password"]??"";
 
     if(empty($user)||empty($pass)){
-        header("Location: /proyectos/Gestion_restaurantes/index.php");
+        header("Location: /projects/2-DAW/proyecto_restaurantes/index.php");
         exit();
     }
 
@@ -37,9 +37,9 @@
                 $_SESSION["carrito"]=[];
             }
 
-            header("Location: /proyectos/Gestion_restaurantes/categorias.php");
+            header("Location: /projects/2-DAW/proyecto_restaurantes/categorias.php");
         }else{
-            header("Location: /proyectos/Gestion_restaurantes/index.php?error=1");
+            header("Location: /projects/2-DAW/proyecto_restaurantes/index.php?error=1");
             exit();
         }
 

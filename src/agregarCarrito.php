@@ -5,14 +5,14 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/proyectos/Gestion_restaurantes/db/functions.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/projects/2-DAW/proyecto_restaurantes/db/functions.php";
 
 // Verificar que los parámetros POST estén definidos
 $user = $_POST["user"] ?? "";
 $pass = $_POST["password"] ?? "";
 
 if (empty($user) || empty($pass)) {
-    header("Location: /proyectos/Gestion_restaurantes/index.php");
+    header("Location: /projects/2-DAW/proyecto_restaurantes/index.php");
     exit();
 }
 
@@ -83,7 +83,7 @@ if (isset($_POST['codigo'], $_POST['cantidad'])) {
             // Depurar: Verifica si la actualización de la base de datos fue exitosa
             if ($queryActualizar->execute()) {
                 // Redirigir al usuario después de actualizar el carrito y el stock
-                header("Location: /proyectos/Gestion_restaurantes/productos.php?codigo=" . $codigo);
+                header("Location: /projects/2-DAW/proyecto_restaurantes/productos.php?codigo=" . $codigo);
                 exit();
             } else {
                 echo "Error al actualizar el stock";

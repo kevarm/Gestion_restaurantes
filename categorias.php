@@ -5,10 +5,10 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/proyectos/Gestion_restaurantes/db/functions.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/projects/2-DAW/proyecto_restaurantes/db/functions.php";
 
 if (!isset($_SESSION["user"])) {
-    header("Location: /proyectos/Gestion_restaurantes/index.php");
+    header("Location: /projects/2-DAW/proyecto_restaurantes/index.php");
     exit();
 }
 
@@ -22,13 +22,13 @@ $user = $_SESSION["user"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorías</title>
-    <link rel="stylesheet" href="/proyectos/Gestion_restaurantes/css/categorias.css">
+    <link rel="stylesheet" href="/projects/2-DAW/proyecto_restaurantes/css/categorias.css">
 </head>
 
 <body>
     <header>
-        <a href="/proyectos/Gestion_restaurantes/src/logout.php">Cerrar sesión</a>
-        <a href="/proyectos/Gestion_restaurantes/carrito.php">Ir al carrito</a>
+        <a href="/projects/2-DAW/proyecto_restaurantes/src/logout.php">Cerrar sesión</a>
+        <a href="/projects/2-DAW/proyecto_restaurantes/carrito.php">Ir al carrito</a>
     </header>
     <main>
         <h1>Hola <?php echo htmlspecialchars($user["email"]); ?></h1>
@@ -48,7 +48,7 @@ $user = $_SESSION["user"];
                     $nombre=htmlspecialchars($categoria["nombre"]);
                     $descripcion=htmlspecialchars($categoria["descripcion"]);
 
-                    echo "<a href='/proyectos/Gestion_restaurantes/productos.php?codigo=".$codigo."'>{$nombre}</a>";
+                    echo "<a href='/projects/2-DAW/proyecto_restaurantes/productos.php?codigo=".$codigo."'>{$nombre}</a>";
                 }
             } else {
                 echo "<h3>No existen categorias</h3>";

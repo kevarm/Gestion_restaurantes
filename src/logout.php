@@ -9,6 +9,6 @@
 
      session_destroy();
 
-     header("Location: /proyectos/Gestion_restaurantes/index.php");
+     header("Location: /projects/2-DAW/proyecto_restaurantes/index.php");
      exit();
 ?>
